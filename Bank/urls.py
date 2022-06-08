@@ -14,13 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import include, re_path
 from BankApp import views
 urlpatterns = [
- path('admin/', admin.site.urls),
- path('list/',views.display),
- path('create/',views.create_view),
- path('update/(?P<id>\d+)',views.update_view),
- path('delete/(?P<id>\d+)',views.delete_view),
- path('detail/(?P<id>\d+)',views.detail_view)
+ re_path('admin/', admin.site.urls),
+ re_path('list/',views.display),
+ re_path('create/',views.create_view),
+ re_path('update/(?P<id>\d+)',views.update_view),
+ re_path('delete/(?P<id>\d+)',views.delete_view),
+ re_path('detail/(?P<id>\d+)',views.detail_view)
 ]

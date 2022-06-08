@@ -4,6 +4,7 @@ from BankApp.forms import BankForm
  
 def display(request):
     b=Bank.objects.all()
+    print(b)
     d={'bank':b}
     return render(request,'BankApp/bank_list.html',d)
 def detail_view(request,id):
@@ -11,7 +12,7 @@ def detail_view(request,id):
     print(b)
     d={'b':b}
     print(d)
-    return render(request,'BankApp/bank_detail.html',d)
+    return render(request,'BankApp/bank_details.html',d)
 def create_view(request):
     f=BankForm()
     if request.method=='POST':
